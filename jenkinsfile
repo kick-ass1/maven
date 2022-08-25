@@ -19,7 +19,6 @@ node('built-in')
     }
     stage('ContinuousDelivery') 
     {
-        input message: 'Approval need from Delivery Manager', submitter: 'Tani'
       deploy adapters: [tomcat9(credentialsId: '7fdd0e99-8430-44ee-83d5-8ceb00e0cd65', path: '', url: 'http://172.31.16.27:8080')], contextPath: 'prodapp1', war: '**/*.war'
     }
     
